@@ -1,0 +1,30 @@
+RAFADOUG — REVISÃO GERAL DO CÓDIGO
+
+CORREÇÕES REALIZADAS
+- "RafaDoug Recomenda" padronizado em todos os menus e rodapés.
+- "Contato" passa a apontar diretamente para orcamento.html em todas as páginas.
+- contato.html permanece apenas como redirecionamento de compatibilidade.
+- "Assistência online e suporte remoto" adicionada às opções do formulário de orçamento.
+- pré-seleção de serviço por URL corrigida para funcionar mesmo quando o link não usa acentos.
+- links de afiliado conferidos no Marketplace e nos respectivos artigos.
+- campo de endereço do cliente conferido no formulário.
+
+AUDITORIA
+- TP-Link Archer AX53: afiliado OK (2 usos)
+- Logitech G305: afiliado OK (2 usos)
+- HyperX Cloud III: afiliado OK (2 usos)
+- Logitech K380s: afiliado OK (2 usos)
+- Corsair CX650: afiliado OK (2 usos)
+- Logitech MX Brio: afiliado OK (2 usos)
+- Orçamento: campo de endereço OK
+- Orçamento: montagem de computador OK
+- Orçamento: assistência online OK
+- CSS: chaves balanceadas
+- JavaScript: estrutura básica balanceada
+
+Nenhum erro estrutural interno foi encontrado após as correções.
+
+OBSERVAÇÃO DE PUBLICAÇÃO
+O arquivo robots.txt continua bloqueando indexação (Disallow: /), pois já estava
+configurado assim para homologação/teste. Antes de colocar o domínio oficialmente
+no Google, ele deve ser alterado.

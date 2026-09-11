@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Solicite atendimento da RafaDoug Informática em Aguaí - SP.">
+<title>Solicitar atendimento | RafaDoug Informática</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header natural-header">
+  <div class="container nav">
+    <a href="index.html" class="brand">
+      <span class="brand-name">Rafa<span>Doug</span></span>
+      <small>INFORMÁTICA</small>
+    </a>
+
+    <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false">
+      <i></i><i></i><i></i>
+    </button>
+
+    <nav class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="recomenda.html">RafaDoug Recomenda</a>
+      <a href="blog.html">Blog</a>
+      <a href="orcamento.html" class="active">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main class="request-page">
+
+<section class="request-main">
+  <div class="container request-shell">
+
+    <header class="request-heading">
+      <span class="small-label">SOLICITAR ATENDIMENTO</span>
+      <h1>Conte o que você precisa.</h1>
+      <p>Preencha o formulário para pedir uma avaliação. Se preferir, logo abaixo você encontra WhatsApp, e-mail e endereço da RafaDoug.</p>
+    </header>
+
+    <form class="request-form" id="quoteForm">
+
+      <div class="request-form-section">
+        <div class="request-section-title">
+          <span>01</span>
+          <div>
+            <h2>O que está acontecendo?</h2>
+            <p>Escolha a opção mais próxima do seu caso. Para montar um computador novo, selecione “Orçamento e montagem de computador”.</p>
+          </div>
+        </div>
+
+        <label>
+          Tipo de atendimento
+          <select id="quoteService" name="servico" required>
+            <option value="">Selecione uma opção</option>
+            <option>Computador lento ou travando</option>
+            <option>Formatação ou sistema</option>
+            <option>Vírus e segurança</option>
+            <option>Hardware ou upgrade</option>
+            <option>Orçamento e montagem de computador</option>
+            <option>Celular</option>
+            <option>Site</option>
+            <option>Assistência online e suporte remoto</option>
+            <option>Outro / Não sei</option>
+          </select>
+        </label>
+
+        <label>
+          Descreva o problema
+          <textarea
+            id="quoteProblem"
+            name="problema"
+            rows="6"
+            placeholder="Ex.: o computador demora para ligar, trava quando abro programas e começou a aparecer uma mensagem de erro..."
+            required
+          ></textarea>
+        </label>
+      </div>
+
+      <div class="request-form-section">
+        <div class="request-section-title">
+          <span>02</span>
+          <div>
+            <h2>Seus dados para contato</h2>
+            <p>Usaremos essas informações apenas para responder à solicitação.</p>
+          </div>
+        </div>
+
+        <div class="request-fields-grid">
+          <label>
+            Nome
+            <input id="quoteName" name="nome" type="text" placeholder="Seu nome" required>
+          </label>
+
+          <label>
+            E-mail
+            <input id="quoteEmail" name="email" type="email" placeholder="voce@exemplo.com" required>
+          </label>
+        </div>
+
+        <label>
+          Telefone <span class="optional">(opcional)</span>
+          <input id="quotePhone" name="telefone" type="tel" placeholder="(19) 99999-9999">
+        </label>
+
+        <label>
+          Endereço completo
+          <input id="quoteAddress" name="endereco" type="text" placeholder="Rua, número, bairro e cidade" required>
+        </label>
+      </div>
+
+      <div class="request-submit-area">
+        <button class="request-submit" id="quoteWhatsAppBtn" type="button">
+          Enviar solicitação pelo WhatsApp
+        </button>
+
+        <p class="request-note" id="quoteNote">
+          WhatsApp: +55 19 99135-8604 &nbsp;•&nbsp; E-mail: igorvictorio@hotmail.com
+        </p>
+
+        
+      </div>
+
+    </form>
+
+    </div>
+</section>
+
+</main>
+
+<footer class="footer natural-footer">
+  <div class="container natural-footer-grid">
+    <div>
+      <a href="index.html" class="brand footer-brand">
+        <span class="brand-name">Rafa<span>Doug</span></span>
+        <small>INFORMÁTICA</small>
+      </a>
+      <p>Manutenção, suporte e soluções em informática.</p>
+      <p class="footer-address">Rua Aparecida Araújo Martucci, Jardim Planalto, Aguaí - SP</p>
+      <p class="footer-contact"><a href="tel:+5519991358604">+55 19 99135-8604</a> · <a href="mailto:igorvictorio@hotmail.com">igorvictorio@hotmail.com</a></p>
+    </div>
+
+    <div class="natural-footer-links">
+      <a href="sobre.html">Sobre</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="recomenda.html">RafaDoug Recomenda</a>
+      <a href="blog.html">Blog</a>
+      <a href="orcamento.html" class="active">Contato</a>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <span>© <span class="current-year"></span> RafaDoug Informática.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
