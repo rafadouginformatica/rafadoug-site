@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620">
+<defs>
+  <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0a2544"/>
+    <stop offset="1" stop-color="#04172c"/>
+  </linearGradient>
+  <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#176bff"/>
+    <stop offset="1" stop-color="#00c8ff"/>
+  </linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="11" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="900" height="620" rx="30" fill="url(#g1)"/>
+<path d="M80 80L300 40 210 260 30 320Z" fill="#0b58ff" opacity=".22"/>
+<path d="M810 40L650 215 855 185Z" fill="#00d2ff" opacity=".24"/>
+<path d="M75 525L305 355 220 610Z" fill="#03c8ff" opacity=".17"/>
+<path d="M610 80l140 110-160 80z" fill="#175cff" opacity=".18"/>
+<path d="M80 118L310 84M43 300L245 220M660 70L800 170M650 220L860 165" stroke="#5d9fc6" stroke-width="3" opacity=".55" />
+<rect x="248" y="125" width="430" height="285" rx="18" fill="#071a31" stroke="#1699ff" stroke-width="5"/>
+<rect x="276" y="151" width="374" height="229" rx="10" fill="#09284a"/>
+<path d="M294 338L420 184M326 369L458 202M560 172L632 260M588 154L650 230" stroke="#0bd6ff" stroke-width="8" opacity=".8"/>
+<path d="M303 320L400 201M543 169L622 262" stroke="#1b62ff" stroke-width="24" opacity=".45"/>
+<text x="462" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="40" fill="white">Rafa<tspan fill="#21a6ff">Doug</tspan></text>
+<text x="462" y="284" text-anchor="middle" font-family="Arial, sans-serif" letter-spacing="7" font-size="13" fill="#c7d8e9">INFORMÁTICA</text>
+<text x="462" y="326" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#9eb9cf">tecnologia que resolve</text>
+<rect x="410" y="410" width="110" height="18" rx="8" fill="#526b7e"/>
+<rect x="360" y="431" width="210" height="16" rx="8" fill="#294762"/>
+<rect x="200" y="460" width="500" height="38" rx="12" fill="#0a1d33"/>
+<path d="M230 479h430" stroke="#25435d" stroke-width="3" stroke-dasharray="12 7"/>
+<ellipse cx="705" cy="477" rx="40" ry="25" fill="#0b1a2b" stroke="#1c8fd6" stroke-width="3"/>
+<circle cx="737" cy="108" r="10" fill="#6faed2" opacity=".9"/>
+</svg>
