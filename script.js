@@ -1,5 +1,6 @@
 const WHATSAPP_NUMBER = "5519991358604";
 const BUSINESS_ADDRESS = "Rua Aparecida Araújo Martucci, 87, Jardim Planalto, Aguaí - SP";
+const BUSINESS_PHONE_DISPLAY = "19 99135-8604";
 
 document.querySelectorAll(".current-year").forEach(el => {
   el.textContent = new Date().getFullYear();
@@ -8,6 +9,11 @@ document.querySelectorAll(".current-year").forEach(el => {
 /* Dados oficiais da empresa */
 document.querySelectorAll(".footer-address, .home-location-note").forEach(el => {
   el.textContent = BUSINESS_ADDRESS;
+});
+
+document.querySelectorAll('a[href^="tel:"]').forEach(el => {
+  el.setAttribute("href", `tel:+${WHATSAPP_NUMBER}`);
+  el.textContent = BUSINESS_PHONE_DISPLAY;
 });
 
 const menuBtn = document.querySelector(".menu-btn");
@@ -99,16 +105,7 @@ if (quoteForm) {
         return;
       }
 
-      const msg = `Olá, RafaDoug! Vim pelo site e gostaria de uma avaliação.
-
-Nome: ${data.nome}
-E-mail: ${data.email}
-Telefone: ${data.telefone || "Não informado"}
-Endereço: ${data.endereco}
-Assunto: ${data.servico}
-
-O que está acontecendo:
-${data.problema}`;
+      const msg = `Olá, RafaDoug! Vim pelo site e gostaria de uma avaliação.\n\nNome: ${data.nome}\nE-mail: ${data.email}\nTelefone: ${data.telefone || "Não informado"}\nEndereço: ${data.endereco}\nAssunto: ${data.servico}\n\nO que está acontecendo:\n${data.problema}`;
 
       window.open(
         `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,
@@ -149,14 +146,7 @@ if (contactForm) {
         return;
       }
 
-      const msg = `Olá, RafaDoug! Vim pelo Fale Conosco do site.
-
-Nome: ${data.nome}
-E-mail: ${data.email}
-Telefone: ${data.telefone || "Não informado"}
-
-Mensagem:
-${data.mensagem}`;
+      const msg = `Olá, RafaDoug! Vim pelo Fale Conosco do site.\n\nNome: ${data.nome}\nE-mail: ${data.email}\nTelefone: ${data.telefone || "Não informado"}\n\nMensagem:\n${data.mensagem}`;
 
       window.open(
         `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,
@@ -166,7 +156,6 @@ ${data.mensagem}`;
     });
   }
 }
-
 
 /* Marketplace / links de afiliado ainda sem URL final */
 document.querySelectorAll(".affiliate-buy-link").forEach(link => {
@@ -190,7 +179,6 @@ document.querySelectorAll(".affiliate-buy-link").forEach(link => {
     }
   });
 });
-
 
 /* Tempo de experiência da RafaDoug — atualizado automaticamente a partir de 2013 */
 document.querySelectorAll(".experience-years").forEach(el => {
