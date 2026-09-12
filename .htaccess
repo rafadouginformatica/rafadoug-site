@@ -1,0 +1,35 @@
+DirectoryIndex index.html
+Options -MultiViews
+
+RewriteEngine On
+
+# Força HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# A página inicial passa a usar /inicio
+RewriteRule ^$ /inicio [R=301,L]
+
+# Contato antigo aponta direto para o orçamento
+RewriteRule ^contato(?:\.html)?$ /orcamento [R=301,L,NC]
+
+# index.html vira /inicio
+RewriteCond %{THE_REQUEST} \s/+index\.html(?:[\s?]) [NC]
+RewriteRule ^index\.html$ /inicio [R=301,L]
+
+# Remove .html das URLs públicas
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html(?:[\s?]) [NC]
+RewriteRule ^(.+)\.html$ /$1 [R=301,L,NE]
+
+# Remove barra final das páginas, mantendo URLs consistentes
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+# /inicio abre o index.html internamente
+RewriteRule ^inicio$ index.html [L]
+
+# URLs sem extensão abrem o arquivo .html correspondente
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
