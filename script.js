@@ -1,7 +1,13 @@
 const WHATSAPP_NUMBER = "5519991358604";
+const BUSINESS_ADDRESS = "Rua Aparecida Araújo Martucci, 87, Jardim Planalto, Aguaí - SP";
 
 document.querySelectorAll(".current-year").forEach(el => {
   el.textContent = new Date().getFullYear();
+});
+
+/* Dados oficiais da empresa */
+document.querySelectorAll(".footer-address, .home-location-note").forEach(el => {
+  el.textContent = BUSINESS_ADDRESS;
 });
 
 const menuBtn = document.querySelector(".menu-btn");
