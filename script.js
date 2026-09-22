@@ -186,3 +186,30 @@ document.querySelectorAll(".experience-years").forEach(el => {
   const currentYear = new Date().getFullYear();
   el.textContent = Math.max(0, currentYear - foundingYear);
 });
+
+
+/* RAFADOUG_IMAGE_FALLBACK_V1 */
+(function () {
+  function proxyUrl(src) {
+    return 'https://wsrv.nl/?url=' + encodeURIComponent(src) + '&w=1200&h=900&fit=contain&output=webp';
+  }
+
+  function retryImage(img) {
+    if (!img || img.tagName !== 'IMG' || img.dataset.rafadougRetry === '1') return;
+    var original = img.getAttribute('data-original-src') || img.getAttribute('src') || '';
+    if (!/^https?:\/\//i.test(original)) return;
+    if (original.indexOf('wsrv.nl/?url=') !== -1) return;
+    img.dataset.rafadougRetry = '1';
+    img.src = proxyUrl(original);
+  }
+
+  document.addEventListener('error', function (event) {
+    if (event.target && event.target.tagName === 'IMG') retryImage(event.target);
+  }, true);
+
+  window.addEventListener('load', function () {
+    document.querySelectorAll('img').forEach(function (img) {
+      if (img.complete && img.naturalWidth === 0) retryImage(img);
+    });
+  });
+})();
