@@ -3,33 +3,41 @@ Options -MultiViews
 
 RewriteEngine On
 
-# Força HTTPS
+# HTTPS
 RewriteCond %{HTTPS} !=on
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
-# A página inicial passa a usar /inicio
-RewriteRule ^$ /inicio [R=301,L]
+# Página inicial
+RewriteRule ^$ /inicio [R=301,L,NE]
+RewriteRule ^index/?$ /inicio [R=301,L,NC,NE]
 
-# Contato antigo aponta direto para o orçamento
-RewriteRule ^contato(?:\.html)?$ /orcamento [R=301,L,NC]
+# Compatibilidade com URLs antigas
+RewriteRule ^contato(?:\.html)?/?$ /orcamento [R=301,L,NC,NE]
 
-# index.html vira /inicio
-RewriteCond %{THE_REQUEST} \s/+index\.html(?:[\s?]) [NC]
-RewriteRule ^index\.html$ /inicio [R=301,L]
-
-# Remove .html das URLs públicas
-RewriteCond %{THE_REQUEST} \s/+(.+?)\.html(?:[\s?]) [NC]
+# Remove .html de URLs públicas acessadas diretamente
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html(?:[?\s]) [NC]
 RewriteRule ^(.+)\.html$ /$1 [R=301,L,NE]
 
-# Remove barra final das páginas, mantendo URLs consistentes
+# Remove barra final em páginas (exceto diretórios reais)
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.+)/$ /$1 [R=301,L]
+RewriteRule ^(.+)/$ /$1 [R=301,L,NE]
 
-# /inicio abre o index.html internamente
+# /inicio serve index.html
 RewriteRule ^inicio$ index.html [L]
 
-# URLs sem extensão abrem o arquivo .html correspondente
+# Rotas sem extensão servem o .html correspondente
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
 RewriteRule ^(.+)$ $1.html [L]
+
+# Cache básico para arquivos estáticos
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+</IfModule>
